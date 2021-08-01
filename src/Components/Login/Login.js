@@ -15,7 +15,7 @@ const Login = () => {
     name: name,
     number: number,
     password: password,
-    sex: sex,
+    sex: selectSex,
   };
   const getNumber = (e) => {
     setNumberLength(e.target.value.length);
@@ -49,7 +49,12 @@ const Login = () => {
     <div className='login'>
       <img src={people} />
 
-      <input type='text' placeholder='name' required />
+      <input
+        type='text'
+        placeholder='name'
+        required
+        onChange={(e) => setName(e.target.value)}
+      />
       <div className='mobile-number'>
         <input
           type='text'
@@ -108,7 +113,12 @@ const Login = () => {
           <a href='#condition'>Conditions</a>
         </span>
       </div>
-      <button type='submit' className='submit-button' disabled={!checked}>
+      <button
+        type='submit'
+        className='submit-button'
+        disabled={!checked}
+        onClick={handleSubmit}
+      >
         submit
       </button>
     </div>
