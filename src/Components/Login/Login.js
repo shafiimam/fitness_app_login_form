@@ -22,7 +22,6 @@ const Login = () => {
     setNumber(e.target.value);
   };
   const handleChange = (e) => {
-    console.log(e);
     if (e.target.checked) {
       console.log('checked');
       setChecked(true);
@@ -33,6 +32,7 @@ const Login = () => {
   };
   const handleSubmit = () => {
     console.log('submitted');
+    console.log(formData);
     if (
       !formData.name &&
       !formData.number &&
@@ -63,13 +63,11 @@ const Login = () => {
             maxlength='10'
             className='number'
             onChange={getNumber}
-            required
           />
         </div>
         <input
           type='password'
           placeholder='Password'
-          required
           onChange={(e) => setPassword(e.target.value)}
         />
         <span className='input-length'>{numberLength}/10</span>
