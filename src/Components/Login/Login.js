@@ -48,70 +48,69 @@ const Login = () => {
   return (
     <div className='login'>
       <img src={people} />
-      <form onSubmit={handleSubmit} class>
-        <input type='text' placeholder='name' required />
-        <div className='mobile-number'>
-          <input
-            type='text'
-            placeholder='+91'
-            className='country-code'
-            required
-          />
-          <input
-            type='tel'
-            placeholder='Mobile No'
-            maxlength='10'
-            className='number'
-            onChange={getNumber}
-          />
-        </div>
-        <input
-          type='password'
-          placeholder='Password'
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <span className='input-length'>{numberLength}/10</span>
-        <div className='select-sex'>
-          <button
-            onClick={() => {
-              setSelectSex('male');
-            }}
-          >
-            <img src={sex} className='sex-icon' />
-          </button>
-          <button
-            onClick={() => {
-              setSelectSex('female');
-            }}
-          >
-            <img src={sex} className='sex-icon' />
-          </button>
-          <button
-            onClick={() => {
-              setSelectSex('others');
-            }}
-          >
-            <img src={sex} className='sex-icon' />
-          </button>
-        </div>
 
-        <div className='tnc'>
-          <input
-            type='checkbox'
-            id='checkbox'
-            name='checkbox'
-            onClick={handleChange}
-          />
-          <label for='checkbox' />
-          <span>
-            I agree to <a href='#terms'>terms</a> &{' '}
-            <a href='#condition'>Conditions</a>
-          </span>
-        </div>
-        <button type='submit' className='submit-button' disabled={!checked}>
-          submit
+      <input type='text' placeholder='name' required />
+      <div className='mobile-number'>
+        <input
+          type='text'
+          placeholder='+91'
+          className='country-code'
+          required
+        />
+        <input
+          type='tel'
+          placeholder='Mobile No'
+          maxlength='10'
+          className='number'
+          onChange={getNumber}
+        />
+      </div>
+      <input
+        type='password'
+        placeholder='Password'
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <span className='input-length'>{numberLength}/10</span>
+      <div className='select-sex'>
+        <button
+          onClick={() => {
+            setSelectSex('male');
+          }}
+        >
+          <img src={sex} className='sex-icon' />
         </button>
-      </form>
+        <button
+          onClick={() => {
+            setSelectSex('female');
+          }}
+        >
+          <img src={sex} className='sex-icon' />
+        </button>
+        <button
+          onClick={() => {
+            setSelectSex('others');
+          }}
+        >
+          <img src={sex} className='sex-icon' />
+        </button>
+      </div>
+
+      <div className='tnc'>
+        <input
+          type='checkbox'
+          id='checkbox'
+          name='checkbox'
+          onClick={handleChange}
+        />
+        <label for='checkbox' />
+        <span>
+          I agree to <a href='#terms'>terms</a> &{' '}
+          <a href='#condition'>Conditions</a>
+        </span>
+      </div>
+      <button type='submit' className='submit-button' disabled={!checked}>
+        submit
+      </button>
     </div>
   );
 };
